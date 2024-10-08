@@ -266,7 +266,7 @@ def main(page):
 
     page.add(
         ft.Container(
-            ft.Row([ft.Image(src="imagens/ufcat3.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
+            ft.Row([ft.Image(src="ufcat3.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
                         ft.Image(src="banner_ppgmo_23bbfad3fa.png", width=600, height=200, fit=ft.ImageFit.CONTAIN),
                         ft.Image(src="imtec_logo-removebg-preview.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
                         ], alignment=ft.MainAxisAlignment.SPACE_AROUND),
