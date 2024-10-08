@@ -266,9 +266,9 @@ def main(page):
 
     page.add(
         ft.Container(
-            ft.Row([ft.Image(src="ufcat3.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
-                        ft.Image(src="banner_ppgmo_23bbfad3fa.png", width=600, height=200, fit=ft.ImageFit.CONTAIN),
-                        ft.Image(src="imtec_logo-removebg-preview.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
+            ft.Row([ft.Image(src="imagens/ufcat3.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
+                        ft.Image(src="imagens/banner_ppgmo_23bbfad3fa.png", width=600, height=200, fit=ft.ImageFit.CONTAIN),
+                        ft.Image(src="imagens/imtec_logo-removebg-preview.png", width=200, height=200, fit=ft.ImageFit.CONTAIN),
                         ], alignment=ft.MainAxisAlignment.SPACE_AROUND),
         ),
         ft.Container(
@@ -276,7 +276,7 @@ def main(page):
                             ft.ElevatedButton(text="PLAY MOVEMENTS", on_click=play_movements, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                             ft.ElevatedButton(text="STOP MOVEMENT", on_click=stop_movement_func, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                                 ], alignment=ft.MainAxisAlignment.CENTER, height=600),
-                ft.Column([ft.Image(src="braço.png", width=300, height=300, fit=ft.ImageFit.CONTAIN),]),
+                ft.Column([ft.Image(src="imagens/braço.png", width=300, height=300, fit=ft.ImageFit.CONTAIN),]),
                 ft.Column([ft.Row([slider0]),
                             ft.Row([slider1]),
                             ft.Row([slider2]),
