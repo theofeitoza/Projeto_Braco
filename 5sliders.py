@@ -20,17 +20,23 @@ def main(page):
     page.overlay.append(bottom_sheet)
 
     def send_servo_value(servo_id, value):
+        # Certifica-se de que o valor seja inteiro
+        value = int(value)
         command = f'{servo_id},{value}\n'
         ser.write(command.encode('utf-8'))
         print(f"Enviando para servo {servo_id}: {value}")
 
+
     def get_values():
-        return [slider.value for slider in sliders]
+        # Retorna os valores como inteiros
+        return [int(slider.value) for slider in sliders]
+
 
     def handle_change(e):
         slider_id = e.control.data
-        value = int(e.control.value)
+        value = int(e.control.value)  # Certifica-se que o valor é inteiro
         send_servo_value(slider_id, value)
+
 
     def handle_button_change2(e):
         nonlocal moviment_value
@@ -54,6 +60,14 @@ def main(page):
         if segmented_button_moviment:
             segmented_button_moviment.selected = {moviment_value}
         
+        page.update()
+
+    def save_properties_long_press(e):
+        global saved_properties
+        slider_values = get_values()
+        saved_properties = (slider_values.copy())
+        print(f"Propriedades salvas: {saved_properties}")
+        show_bottom_sheet(f"Propriedades salvas: {saved_properties}")  # Mostrar no BottomSheet
         page.update()
 
     def show_bottom_sheet(content):
@@ -103,7 +117,7 @@ def main(page):
                 # Remove colchetes e converte a linha em uma lista de floats
                 sliders_str = linha.strip('[]')  # Remove colchetes da linha
                 try:
-                    slider_values = [float(value.strip()) for value in sliders_str.split(',')]
+                    slider_values = [int(float(value.strip())) for value in sliders_str.split(',')]
                 except ValueError as ve:
                     print(f"Erro: Não foi possível converter os valores dos sliders. Detalhes do erro: {ve}")
                     continue
@@ -150,8 +164,8 @@ def main(page):
             sliders_str = linha.strip('[]')  # Remove colchetes da linha
 
             # Limpeza dos dados antes de converter
-            slider_values = [float(value.strip()) for value in sliders_str.split(',')]
-
+            slider_values = [int(float(value.strip())) for value in sliders_str.split(',')]
+            
             # Atualiza os sliders e envia os valores para os servos
             for i, slider in enumerate(sliders):
                 slider.value = slider_values[i]
@@ -207,7 +221,7 @@ def main(page):
                         ], alignment=ft.MainAxisAlignment.SPACE_AROUND),
         ),
         ft.Container(
-            ft.Row([ft.Column([ft.ElevatedButton(text="SAVE POSITIONS", on_click=save_properties, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
+            ft.Row([ft.Column([ft.ElevatedButton(text="SAVE POSITIONS", on_click=save_properties, on_long_press=save_properties_long_press, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                             ft.ElevatedButton(text="PLAY MOVEMENTS", on_click=play_movements, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                             ft.ElevatedButton(text="STOP MOVEMENT", on_click=stop_movement_func, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                                 ], alignment=ft.MainAxisAlignment.CENTER, height=600),
