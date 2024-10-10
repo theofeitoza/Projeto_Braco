@@ -191,11 +191,11 @@ def main(page):
                 return arquivo.readlines()
         return []
 
-    slider0 = ft.Slider(min=0, max=180, width=300, value=90, data=1, on_change=handle_change, label="{value}º", adaptive=True)
+    slider0 = ft.Slider(min=0, max=90, width=300, value=90, data=1, on_change=handle_change, label="{value}º", adaptive=True)
     slider1 = ft.Slider(min=0, max=180, width=300, value=0, data=2, on_change=handle_change, label="{value}º", adaptive=True)
     slider2 = ft.Slider(min=0, max=180, width=300, value=0, data=3, on_change=handle_change, label="{value}º", adaptive=True)
     slider3 = ft.Slider(min=0, max=180, width=300, value=90, data=4, on_change=handle_change, label="{value}º", adaptive=True)
-    slider4 = ft.Slider(min=0, max=90, width=300, value=0, data=5, on_change=handle_change, label="{value}º", adaptive=True)
+    slider4 = ft.Slider(min=0, max=180, width=300, value=0, data=5, on_change=handle_change, label="{value}º", adaptive=True)
     sliders = [slider0, slider1, slider2, slider3, slider4]
 
     def create_segmented_button_moviment():
@@ -226,10 +226,15 @@ def main(page):
                             ft.ElevatedButton(text="STOP MOVEMENT", on_click=stop_movement_func, width=300, height=80, style=ft.ButtonStyle(bgcolor=ft.colors.BLACK, color=ft.colors.WHITE, shape=ft.ContinuousRectangleBorder(radius=0))),
                                 ], alignment=ft.MainAxisAlignment.CENTER, height=600),
                 ft.Column([ft.Image(src="imagens/braço.png", width=300, height=300, fit=ft.ImageFit.CONTAIN),]),
-                ft.Column([ft.Row([slider0]),
+                ft.Column([ft.Text('Garra', text_align=ft.TextAlign.CENTER),
+                            ft.Row([slider0]),
+                            ft.Text('Mão'),
                             ft.Row([slider1]),
+                            ft.Text('Cotovelo'),
                             ft.Row([slider2]),
+                            ft.Text('Ombro'),
                             ft.Row([slider3]),
+                            ft.Text('Base'),
                             ft.Row([slider4]),
                             ft.Row([create_segmented_button_moviment()])
                             ], alignment=ft.MainAxisAlignment.CENTER, height=600),
