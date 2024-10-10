@@ -34,7 +34,7 @@ void setup() {
 // Função para converter o ângulo em valor de pulso
 int angleToPulse(int angle, int servoID) {
   // Mapeia o ângulo de acordo com o servoID
-  if (servoID == 5) {
+  if (servoID == 1) {
     return map(angle, 0, 90, SERVO_MIN, 600);  // 0-90 para o servo 5
   } else if(servoID == 3) {
     return map(angle, 0, 180, SERVO_MAX, SERVO_MIN);  // Mapeamento invertido
@@ -55,7 +55,7 @@ void loop() {
       int pulse = angleToPulse(inputValue, servoID);  // Converte o ângulo em pulso
       
       switch (servoID) {
-        case 1:
+        case 5:
           if (inputValue >= 0 && inputValue <= 180 && inputValue != servo1Angle) {
             servo1Angle = inputValue;
             pwm.setPWM(servo1Channel, 0, pulse);
@@ -66,7 +66,7 @@ void loop() {
           }
           break;
 
-        case 2:
+        case 4:
           if (inputValue >= 0 && inputValue <= 180 && inputValue != servo2Angle) {
             servo2Angle = inputValue;
             pwm.setPWM(servo2Channel, 0, pulse);
@@ -88,7 +88,7 @@ void loop() {
           }
           break;
 
-        case 4:
+        case 2:
           if (inputValue >= 0 && inputValue <= 180 && inputValue != servo4Angle) {
             servo4Angle = inputValue;
             pwm.setPWM(servo4Channel, 0, pulse);
@@ -99,7 +99,7 @@ void loop() {
           }
           break;
 
-        case 5:
+        case 1:
           if (inputValue >= 0 && inputValue <= 90 && inputValue != servo5Angle) {
             servo5Angle = inputValue;
             pwm.setPWM(servo5Channel, 0, pulse);
