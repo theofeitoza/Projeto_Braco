@@ -52,7 +52,7 @@ def main(page):
         page.update()
 
     def reset_positions(e):
-        slider_values = [90, 0, 0, 90, 0]
+        slider_values = [90, 0, 0, 0, 90]
         # Atualiza os sliders
         for i, slider in enumerate(sliders):
             slider.value = slider_values[i]
@@ -191,11 +191,11 @@ def main(page):
                 return arquivo.readlines()
         return []
 
-    slider0 = ft.Slider(min=0, max=90, width=300, value=90, data=1, on_change=handle_change, label="{value}º", adaptive=True)
+    slider0 = ft.Slider(min=90, max=180, width=300, value=90, data=1, on_change=handle_change, label="{value}º", adaptive=True)
     slider1 = ft.Slider(min=0, max=180, width=300, value=0, data=2, on_change=handle_change, label="{value}º", adaptive=True)
     slider2 = ft.Slider(min=0, max=180, width=300, value=0, data=3, on_change=handle_change, label="{value}º", adaptive=True)
-    slider3 = ft.Slider(min=0, max=180, width=300, value=90, data=4, on_change=handle_change, label="{value}º", adaptive=True)
-    slider4 = ft.Slider(min=0, max=180, width=300, value=0, data=5, on_change=handle_change, label="{value}º", adaptive=True)
+    slider3 = ft.Slider(min=0, max=180, width=300, value=0, data=4, on_change=handle_change, label="{value}º", adaptive=True)
+    slider4 = ft.Slider(min=0, max=180, width=300, value=90, data=5, on_change=handle_change, label="{value}º", adaptive=True)
     sliders = [slider0, slider1, slider2, slider3, slider4]
 
     def create_segmented_button_moviment():
