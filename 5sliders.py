@@ -8,7 +8,7 @@ time.sleep(2)
 def main(page):
     page.theme_mode = ft.ThemeMode.LIGHT
     
-    slider_values = [90, 0, 0, 90, 0]
+    slider_values = [90, 0, 0, 0, 90]
     moviment_value = 0
     saved_properties = (slider_values)
     sliders = []
@@ -52,7 +52,7 @@ def main(page):
         page.update()
 
     def reset_positions(e):
-        slider_values = [90, 0, 0, 0, 90]
+        slider_values = [0, 90, 0, 0, 90]
         # Atualiza os sliders
         for i, slider in enumerate(sliders):
             slider.value = slider_values[i]
@@ -130,8 +130,6 @@ def main(page):
                 # Envia o valor para o servo 5 se houver um valor a ser enviado
                 if len(linhas) > 0:
                     button_value = 0  # Valor padrão ou ajuste conforme necessário
-                    send_servo_value(5, button_value)  # Ajuste conforme necessário para o valor do botão
-
                 if segmented_button:
                     segmented_button.selected = {button_value}
                 time.sleep(3)  # Tempo entre movimentos
@@ -191,8 +189,8 @@ def main(page):
                 return arquivo.readlines()
         return []
 
-    slider0 = ft.Slider(min=90, max=180, width=300, value=90, data=1, on_change=handle_change, label="{value}º", adaptive=True)
-    slider1 = ft.Slider(min=0, max=180, width=300, value=0, data=2, on_change=handle_change, label="{value}º", adaptive=True)
+    slider0 = ft.Slider(min=0, max=90, width=300, value=0, data=1, on_change=handle_change, label="{value}º", adaptive=True)
+    slider1 = ft.Slider(min=0, max=180, width=300, value=90, data=2, on_change=handle_change, label="{value}º", adaptive=True)
     slider2 = ft.Slider(min=0, max=180, width=300, value=0, data=3, on_change=handle_change, label="{value}º", adaptive=True)
     slider3 = ft.Slider(min=0, max=180, width=300, value=0, data=4, on_change=handle_change, label="{value}º", adaptive=True)
     slider4 = ft.Slider(min=0, max=180, width=300, value=90, data=5, on_change=handle_change, label="{value}º", adaptive=True)
