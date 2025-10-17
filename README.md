@@ -5,7 +5,7 @@
 🦾 Controlador de Braço Robótico
 Interface Gráfica para Controle, Gravação e Reprodução de Movimentos de um Braço Robótico de 5 Eixos.
 
-<img alt="last-commit" src="https://img.shields.io/github/last-commit/theofeitoza/Projeto_Braco?style=flat&logo=git&logoColor=white&color=0080ff"> <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/theofeitoza/Projeto_Braco?style=flat&color=0080ff">
+<img alt="last-commit" src="https://img.shields.io/github/last-commit/theofeitoza/projeto_braco?style=flat&logo=git&logoColor=white&color=0080ff"> <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/theofeitoza/Projeto_Braco?style=flat&color=0080ff">
 
 <p><em>Tecnologias Utilizadas:</em></p> <img alt="Python" src="https://img.shields.io/badge/Python-3776AB.svg?style=flat&logo=Python&logoColor=white"> <img alt="Flet" src="https://img.shields.io/badge/Flet-00D46A.svg?style=flat&logo=python&logoColor=white"> <img alt="Arduino" src="https://img.shields.io/badge/Arduino-00979D.svg?style=flat&logo=Arduino&logoColor=white">
 
