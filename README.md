@@ -21,6 +21,7 @@
 
 ## 📜 Índice
 - [Visão Geral](#-visão-geral)
+- [Demonstração](#-demonstração)
 - [Funcionalidades](#-funcionalidades)
 - [Arquitetura do Sistema](#-arquitetura-do-sistema)
 - [Como Começar](#-como-começar)
@@ -39,6 +40,15 @@ Este projeto consiste em um sistema completo para o controle de um braço robót
 2.  **Interface Gráfica (GUI):** Uma aplicação desktop desenvolvida em Python com o framework Flet. A interface permite o controle manual em tempo real de cada junta do braço, além de oferecer funcionalidades para gravar, salvar, importar e reproduzir sequências de movimentos.
 
 A comunicação entre a interface gráfica e o Arduino é realizada via porta serial (USB).
+
+---
+
+## 📸 Demonstração
+A imagem abaixo exibe a interface gráfica do controlador em funcionamento.
+
+<p align="center">
+  <img src="braco.jpg" alt="Interface Gráfica do Controlador do Braço Robótico" width="80%">
+</p>
 
 ---
 
